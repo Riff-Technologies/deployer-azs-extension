@@ -1,0 +1,119 @@
+{
+  "name": "deployer",
+  "displayName": "Deployer",
+  "description": "Execute multiple SQL files",
+  "publisher": "rollersoft.io",
+  "version": "3.5.3",
+  "engines": {
+    "vscode": "^1.39.0",
+    "azdata": "^1.46.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShawnRoller/deployer.git"
+  },
+  "license": "UNLICENSED",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:deployer.runSqlFiles",
+    "onCommand:deployer.diffCurrentProc",
+    "onCommand:deployer.setOpenAiApiKey",
+    "onCommand:deployer.optimizeSql",
+    "onCommand:deployer.selectFromTable",
+    "onCommand:deployer.viewProcDefinition"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Deployer Configuration",
+      "properties": {
+        "deployer.customSelectPostStatement": {
+          "type": "string",
+          "default": "",
+          "description": "Custom SQL to run after a SELECT statement, e.g. 'ORDER BY 1 DESC'"
+        },
+        "deployer.customTopSelect": {
+          "type": "number",
+          "default": 1000,
+          "description": "Number of rows to return when selecting from a table",
+          "minimum": 1
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "deployer.runSqlFiles",
+        "title": "Deployer: Run SQL Files"
+      },
+      {
+        "command": "deployer.diffCurrentProc",
+        "title": "Deployer: Compare to Current Procedure"
+      },
+      {
+        "command": "deployer.setOpenAiApiKey",
+        "title": "Deployer: Set OpenAI API Key"
+      },
+      {
+        "command": "deployer.optimizeSql",
+        "title": "Deployer: Optimize SQL"
+      },
+      {
+        "command": "deployer.selectFromTable",
+        "title": "Deployer: Select From Table"
+      },
+      {
+        "command": "deployer.viewProcDefinition",
+        "title": "Deployer: View Procedure Definition"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "deployer.viewProcDefinition",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "deployer.selectFromTable",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "test": "node ./out/test/runTest.js",
+    "proposedapi": "node installTypings.js",
+    "package": "vsce package",
+    "test:unit": "mocha"
+  },
+  "devDependencies": {
+    "@types/azdata": "^1.46.6",
+    "@types/chai": "^4.3.16",
+    "@types/glob": "^7.1.4",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^13.11.0",
+    "@types/vscode": "^1.39.0",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "azdata-test": "^1.x",
+    "chai": "^5.1.1",
+    "eslint": "^6.8.0",
+    "glob": "^7.1.7",
+    "mocha": "^10.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
+}
