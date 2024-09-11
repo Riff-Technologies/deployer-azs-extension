@@ -101,4 +101,3 @@ _Optimize SQL requires OpenAI API Key_
 ## License
 
 All rights reserved.
-

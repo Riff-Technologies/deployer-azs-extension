@@ -3,7 +3,7 @@
   "displayName": "Deployer",
   "description": "Execute multiple SQL files",
   "publisher": "rollersoft.io",
-  "version": "3.5.3",
+  "version": "3.6.0",
   "engines": {
     "vscode": "^1.39.0",
     "azdata": "^1.46.6"
@@ -93,6 +93,7 @@
     "test": "node ./out/test/runTest.js",
     "proposedapi": "node installTypings.js",
     "package": "vsce package",
+    "publish:public": "./scripts/publish_to_public.sh",
     "test:unit": "mocha"
   },
   "devDependencies": {
