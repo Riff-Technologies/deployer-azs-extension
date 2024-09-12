@@ -3,7 +3,7 @@
   "displayName": "Deployer",
   "description": "Execute multiple SQL files",
   "publisher": "rollersoft.io",
-  "version": "3.6.0",
+  "version": "3.6.1",
   "engines": {
     "vscode": "^1.39.0",
     "azdata": "^1.46.6"
