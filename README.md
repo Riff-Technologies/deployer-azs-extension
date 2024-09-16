@@ -17,6 +17,15 @@ The Deployer extension for Azure Data Studio streamlines the deployment of `.sql
 
 Currently, installation is only available by manually installing the VSIX package in Azure Data Studio.
 
+## Usage
+
+Open the command pallet and type `Deployer` to see the commands available.
+
+<img width="400" src="https://raw.githubusercontent.com/ShawnRoller/deployer-azs-extension/main/deployer-sql-execute-edit.gif" />
+
+Some commands are also available in the context menu after selecting some text:
+<img width="400" src="https://raw.githubusercontent.com/ShawnRoller/deployer-azs-extension/main/deployer-context-menu.png" />
+
 ## Features
 
 ### Run SQL Files
@@ -33,6 +42,8 @@ Currently, installation is only available by manually installing the VSIX packag
 - If folders are selected, files within them are executed in alphanumeric order.
 - After execution, a report summary is available showing the execution status and any errors encountered.
 
+---
+
 ### Select From Table
 
 1. Select a table name in the editor.
@@ -46,6 +57,8 @@ Currently, installation is only available by manually installing the VSIX packag
 - By default, the top 1000 records are selected.
   - Customize this in Settings: `Deployer: Custom Top Select`.
 - Add a custom `ORDER BY` clause in Settings: `Deployer: Custom Select Post Statement`, e.g., `ORDER BY 1 DESC`.
+
+---
 
 ### Compare to Current Procedure
 
@@ -63,30 +76,36 @@ _It is recommended to add your OpenAI API key before using this command (see [Se
 - Without the API key, Deployer uses regex to find the stored procedure name after the `ALTER` or `CREATE` keyword.
 - Once identified, the current procedure version is pulled from the server for comparison.
 
+---
+
 ### View Procedure Definition
 
 1. Select a procedure name in the editor.
 2. Open the command pallet (`CMD + p`) and select `Deployer: View Procedure Definition`.
-   - Or right-click the selected procuedre in the editor and choose `Deployer: View Procedure Definition` from the context menu.
+   - Or right-click the selected procedure in the editor and choose `Deployer: View Procedure Definition` from the context menu.
 3. Select the connection to pull the current procedure from.
-4. The procedure will be displayed in a new editor
+4. The procedure will be displayed in a new editor.
 
 **What does it do?**
 
-- A SQL command is run for the selection that pulls the procedure definition from the selected connection
+- A SQL command is run for the selection that pulls the procedure definition from the selected connection.
+
+---
 
 ### Optimize SQL - BETA
 
 _Optimize SQL requires OpenAI API Key_
 
 1. Open the command pallet (`CMD + p`) and select `Deployer: Optimize SQL`.
-2. Select the file to optimize
-3. A diff will appear with the current and optimized SQL
+2. Select the file to optimize.
+3. A diff will appear with the current and optimized SQL.
 
 **What does it do?**
 
-- The file is sent to OpenAI servers with a request to optimize it
-- This feature is in BETA and will be improved in future releases
+- The file is sent to OpenAI servers with a request to optimize it.
+- This feature is in BETA and will be improved in future releases.
+
+---
 
 ### Set OpenAI API Key
 
