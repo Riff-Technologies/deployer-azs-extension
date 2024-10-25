@@ -3,7 +3,7 @@
   "displayName": "Deployer",
   "description": "Execute multiple SQL files",
   "publisher": "rollersoft.io",
-  "version": "3.6.2",
+  "version": "3.7.0",
   "engines": {
     "vscode": "^1.39.0",
     "azdata": "^1.46.6"
@@ -22,7 +22,8 @@
     "onCommand:deployer.setOpenAiApiKey",
     "onCommand:deployer.optimizeSql",
     "onCommand:deployer.selectFromTable",
-    "onCommand:deployer.viewProcDefinition"
+    "onCommand:deployer.viewProcDefinition",
+    "onCommand:deployer.viewProcDefinitionForSelection"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -67,6 +68,10 @@
       {
         "command": "deployer.viewProcDefinition",
         "title": "Deployer: View Procedure Definition"
+      },
+      {
+        "command": "deployer.diffCurrentProcForSelection",
+        "title": "Deployer: Compare Selection to Current Procedure"
       }
     ],
     "menus": {
@@ -78,6 +83,11 @@
         },
         {
           "command": "deployer.selectFromTable",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "deployer.diffCurrentProcForSelection",
           "group": "navigation",
           "when": "editorHasSelection"
         }
