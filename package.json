@@ -2,7 +2,7 @@
   "name": "deployer",
   "displayName": "Deployer",
   "description": "Execute multiple SQL files",
-  "icon": "src/assets/deployer-icon.png",
+  "icon": "../src/assets/deployer-icon.png",
   "publisher": "rollersoft.io",
   "version": "3.7.2",
   "engines": {
