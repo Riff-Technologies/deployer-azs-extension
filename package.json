@@ -2,17 +2,13 @@
   "name": "deployer",
   "displayName": "Deployer",
   "description": "Execute multiple SQL files",
-  "icon": "src/assets/deployer-icon.png",
+  "icon": "deployer-icon.png",
   "publisher": "rollersoft.io",
   "version": "3.7.2",
   "engines": {
     "vscode": "^1.39.0",
     "azdata": "^1.46.6"
   },
-  "files": [
-    "src/assets/deployer-icon.png",
-    "out/**/*"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShawnRoller/deployer.git"
