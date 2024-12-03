@@ -21,10 +21,10 @@ Currently, installation is only available by manually installing the VSIX packag
 
 Open the command pallet and type `Deployer` to see the commands available.
 
-<img width="400" src="https://raw.githubusercontent.com/RiffTechnologies/deployer-azs-extension/main/deployer-sql-execute-edit.gif" />
+<img width="400" src="https://raw.githubusercontent.com/Riff-Technologies/deployer-azs-extension/main/deployer-sql-execute-edit.gif" />
 
 Some commands are also available in the context menu after selecting some text:
-<img width="400" src="https://raw.githubusercontent.com/RiffTechnologies/deployer-azs-extension/main/deployer-context-menu.png" />
+<img width="400" src="https://raw.githubusercontent.com/Riff-Technologies/deployer-azs-extension/main/deployer-context-menu.png" />
 
 ## Features
 

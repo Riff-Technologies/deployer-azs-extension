@@ -4,14 +4,14 @@
   "description": "Execute multiple SQL files",
   "icon": "deployer-icon.png",
   "publisher": "rollersoft.io",
-  "version": "3.7.3",
+  "version": "3.7.4",
   "engines": {
     "vscode": "^1.39.0",
     "azdata": "^1.46.6"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RiffTechnologies/deployer.git"
+    "url": "git+https://github.com/Riff-Technologies/deployer.git"
   },
   "license": "UNLICENSED",
   "categories": [
@@ -127,5 +127,9 @@
   },
   "dependencies": {
     "axios": "^1.7.2"
+  },
+  "volta": {
+    "node": "20.9.0",
+    "yarn": "1.22.15"
   }
 }
