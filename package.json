@@ -4,7 +4,7 @@
   "description": "Execute multiple SQL files",
   "icon": "deployer-icon.png",
   "publisher": "rollersoft.io",
-  "version": "3.7.4",
+  "version": "3.8.0",
   "engines": {
     "vscode": "^1.39.0",
     "azdata": "^1.46.6"
