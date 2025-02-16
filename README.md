@@ -62,12 +62,16 @@ Some commands are also available in the context menu after selecting some text:
 
 ### Compare to Current Procedure
 
+_License Required for this feature_
+
 _It is recommended to add your OpenAI API key before using this command (see [Set OpenAI API Key](#set-openai-api-key) below)._
 
-1. Open the command pallet (`CMD + p`) and select `Deployer: Compare to Current Procedure`.
+1. Open the command pallet (`CMD + p`) and select `Deployer: Compare to Current Procedure`. _This command is also available in the context menu after selecting a procedure name in the editor._
 2. Select the file containing the stored procedure you want to compare.
 3. Select the connection to pull the current procedure from.
 4. A diff view will open, showing the currently deployed stored procedure (left) and the selected file (right).
+
+This command is great for deploying multiple stored procedure changes. It allows you to select multiple `.sql` files for deployment, show the diffs one-by-one, and present an option to deploy each change.
 
 **What does it do?**
 
@@ -75,6 +79,7 @@ _It is recommended to add your OpenAI API key before using this command (see [Se
   - This is more effective than using regex.
 - Without the API key, Deployer uses regex to find the stored procedure name after the `ALTER` or `CREATE` keyword.
 - Once identified, the current procedure version is pulled from the server for comparison.
+- The diff between the current server version and the selected version will be shown side-by-side, with an option to execute the change.
 
 ---
 

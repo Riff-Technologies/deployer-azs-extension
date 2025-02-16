@@ -24,7 +24,8 @@
     "onCommand:deployer.optimizeSql",
     "onCommand:deployer.selectFromTable",
     "onCommand:deployer.viewProcDefinition",
-    "onCommand:deployer.viewProcDefinitionForSelection"
+    "onCommand:deployer.viewProcDefinitionForSelection",
+    "onUri"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -42,6 +43,12 @@
           "default": 1000,
           "description": "Number of rows to return when selecting from a table",
           "minimum": 1
+        },
+        "deployer.license-key": {
+          "type": "string",
+          "default": "",
+          "description": "Enter your license key",
+          "scope": "global"
         }
       }
     },
@@ -73,6 +80,18 @@
       {
         "command": "deployer.diffCurrentProcForSelection",
         "title": "Deployer: Compare Selection to Current Procedure"
+      },
+      {
+        "command": "deployer.activateLicenseCommand",
+        "title": "Deployer: Activate License"
+      },
+      {
+        "command": "deployer.revokeLicenseCommand",
+        "title": "Deployer: Revoke License"
+      },
+      {
+        "command": "deployer.purchaseLicenseCommand",
+        "title": "Deployer: Purchase License"
       }
     ],
     "menus": {
@@ -105,7 +124,8 @@
     "proposedapi": "node installTypings.js",
     "package": "vsce package",
     "publish:public": "./scripts/publish_to_public.sh",
-    "test:unit": "mocha"
+    "test:unit": "mocha",
+    "postcompile": "code-checkout-build"
   },
   "devDependencies": {
     "@types/azdata": "^1.46.6",
@@ -126,10 +146,11 @@
     "vsce": "^2.15.0"
   },
   "dependencies": {
+    "@riff-tech/code-checkout": "^1.3.0",
     "axios": "^1.7.2"
   },
   "volta": {
-    "node": "20.9.0",
+    "node": "20.16.0",
     "yarn": "1.22.15"
   }
 }
