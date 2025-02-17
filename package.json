@@ -146,7 +146,7 @@
     "vsce": "^2.15.0"
   },
   "dependencies": {
-    "@riff-tech/code-checkout": "^1.3.0",
+    "@riff-tech/code-checkout": "^1.5.0",
     "axios": "^1.7.2"
   },
   "volta": {
